@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-utveckling, Webdesign &amp; SEO i Sk&aring;ne | Breisner Consulting</title>
     <meta name="description" content="Breisner Consulting bygger AI-agenter med Claude, GPT, Gemini, DeepSeek och Llama. On-premise och moln. Multi-agent-system, CLI, API, webdesign och SEO. Boka kostnadsfri r&aring;dgivning.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Philip Breisner">
+    <meta name="publisher" content="Breisner Consulting">
     <link rel="canonical" href="https://breisnerconsulting.se/">
 
     <!-- Open Graph -->
@@ -127,7 +129,7 @@
         .cta-btn { background: linear-gradient(135deg, rgba(147, 53, 182, 0.35), rgba(96, 165, 250, 0.25)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 0 20px rgba(147, 53, 182, 0.4), 0 0 50px rgba(147, 53, 182, 0.2), 0 0 80px rgba(96, 165, 250, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
         .cta-btn:hover { background: linear-gradient(135deg, rgba(147, 53, 182, 0.5), rgba(96, 165, 250, 0.35)); border-color: rgba(168, 85, 247, 0.5); box-shadow: 0 0 30px rgba(147, 53, 182, 0.6), 0 0 60px rgba(147, 53, 182, 0.3), 0 0 100px rgba(96, 165, 250, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
-        .faq-answer.open { max-height: 200px; }
+        .faq-answer.open { max-height: 300px; }
         .faq-chevron { transition: transform 0.3s ease; }
         .faq-chevron.open { transform: rotate(180deg); }
         .icon-glow { position: relative; }
@@ -141,28 +143,40 @@
         @media (max-width: 767px) { .process-line { display: none; } }
     </style>
 
-    <!-- Structured Data: LocalBusiness -->
+    <!-- Structured Data: ProfessionalService + Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": ["ProfessionalService", "Organization"],
+        "@id": "https://breisnerconsulting.se/#organization",
         "name": "Breisner Consulting",
         "alternateName": "Breisner Consulting AB",
-        "description": "Digital byr\u00e5 i Sk\u00e5ne. AI-utveckling, AI-agenter, webdesign, SEO och digital marknadsf\u00f6ring f\u00f6r f\u00f6retag som vill v\u00e4xa.",
+        "description": "Breisner Consulting \u00e4r en digital byr\u00e5 i Trelleborg, Sk\u00e5ne, som bygger skr\u00e4ddarsydda AI-agenter med Claude, GPT, Gemini, DeepSeek, Llama och Mistral. Vi erbjuder multi-agent-system, on-premise AI via Ollama, webdesign, SEO och digital marknadsf\u00f6ring.",
         "url": "https://breisnerconsulting.se",
         "email": "info@breisnerconsulting.se",
         "image": "https://breisnerconsulting.se/assets/logo.png",
         "logo": "https://breisnerconsulting.se/assets/logo.png",
         "foundingDate": "2022",
-        "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 55.376,
-                "longitude": 13.157
-            },
-            "geoRadius": "150000"
+        "founder": {
+            "@type": "Person",
+            "name": "Philip Breisner",
+            "jobTitle": "Grundare & AI-utvecklare"
         },
+        "areaServed": [
+            {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 55.376,
+                    "longitude": 13.157
+                },
+                "geoRadius": "150000"
+            },
+            {
+                "@type": "Country",
+                "name": "Sweden"
+            }
+        ],
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Trelleborg",
@@ -174,32 +188,31 @@
             "latitude": 55.376,
             "longitude": 13.157
         },
+        "priceRange": "$$",
         "knowsAbout": [
-            "AI-utveckling",
-            "AI-agenter",
+            "AI agent development",
+            "Multi-agent systems",
             "Claude AI",
-            "OpenAI",
-            "GPT",
+            "OpenAI GPT",
             "Google Gemini",
             "DeepSeek",
-            "Llama",
-            "Mistral",
-            "LLM-applikationer",
-            "RAG-pipelines",
-            "Multi-agent-system",
-            "On-premise AI",
+            "Meta Llama",
+            "Mistral AI",
+            "Large Language Models (LLM)",
+            "Retrieval-Augmented Generation (RAG)",
+            "On-premise AI deployment",
             "Ollama",
-            "Lokal AI-drift",
-            "AI CLI-verktyg",
-            "AI API-integrationer",
-            "AI-operativsystem",
-            "S\u00f6kmotoroptimering",
-            "SEO",
+            "AI CLI tools",
+            "AI API integrations",
+            "AI operating systems",
+            "Search Engine Optimization (SEO)",
+            "Generative Engine Optimization (GEO)",
             "Google Ads",
-            "Webdesign",
-            "Sociala Medier",
-            "AI-utbildningar",
-            "Digital marknadsf\u00f6ring"
+            "Web design",
+            "Social media marketing",
+            "AI training and workshops",
+            "FastAPI",
+            "Python"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -210,7 +223,17 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "AI-utveckling & Agenter",
-                        "description": "Skr\u00e4ddarsydda AI-agenter med Claude, GPT, Gemini, DeepSeek, Llama och Mistral. Multi-agent-system, CLI-verktyg, API-integrationer, AI-operativsystem och on-premise-l\u00f6sningar via Ollama f\u00f6r f\u00f6retag med k\u00e4nslig data"
+                        "description": "Skr\u00e4ddarsydda AI-agenter med Claude, GPT, Gemini, DeepSeek, Llama och Mistral. Multi-agent-system, CLI-verktyg, API-integrationer, AI-operativsystem och on-premise-l\u00f6sningar via Ollama f\u00f6r f\u00f6retag med k\u00e4nslig data.",
+                        "serviceType": "AI Development"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "On-premise AI",
+                        "description": "Lokala AI-modeller som k\u00f6rs p\u00e5 kundens egen h\u00e5rdvara via Ollama. Ingen data l\u00e4mnar lokalen. Perfekt f\u00f6r v\u00e5rd, finans, juridik och offentlig sektor.",
+                        "serviceType": "On-premise AI Deployment"
                     }
                 },
                 {
@@ -218,15 +241,8 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "SEO & Google Ads",
-                        "description": "Teknisk SEO, inneh\u00e5llsoptimering, l\u00e4nkbyggande och annonshantering f\u00f6r \u00f6kad synlighet"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Sociala Medier",
-                        "description": "Strategier f\u00f6r Facebook, Instagram och LinkedIn som bygger varum\u00e4rke och driver leads"
+                        "description": "Teknisk SEO, inneh\u00e5llsoptimering, l\u00e4nkbyggande och annonshantering. Inkluderar GEO-optimering f\u00f6r AI-s\u00f6kmotorer som ChatGPT, Perplexity och Claude.",
+                        "serviceType": "Search Engine Optimization"
                     }
                 },
                 {
@@ -234,18 +250,50 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Webdesign",
-                        "description": "Skr\u00e4ddarsydd, responsiv och SEO-optimerad webdesign med UX-fokus"
+                        "description": "Skr\u00e4ddarsydd, responsiv och SEO-optimerad webdesign. Snabba, statiska sajter utan WordPress-beroende.",
+                        "serviceType": "Web Design"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "AI-utbildningar",
-                        "description": "Praktiska AI-utbildningar f\u00f6r team som vill effektivisera arbetsfl\u00f6den"
+                        "name": "Sociala Medier",
+                        "description": "Strategisk n\u00e4rvaro p\u00e5 Facebook, Instagram och LinkedIn som bygger varum\u00e4rke och driver leads.",
+                        "serviceType": "Social Media Marketing"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI-utbildningar & Workshops",
+                        "description": "Praktiska AI-utbildningar f\u00f6r team. Prompt engineering, AI-verktyg f\u00f6r textproduktion, kodning och automation. Branschanpassat.",
+                        "serviceType": "AI Training"
                     }
                 }
             ]
+        }
+    }
+    </script>
+
+    <!-- Structured Data: WebPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://breisnerconsulting.se/#webpage",
+        "url": "https://breisnerconsulting.se",
+        "name": "Breisner Consulting \u2014 AI-agenter, Webdesign & SEO i Sk\u00e5ne",
+        "description": "Breisner Consulting bygger AI-agenter med Claude, GPT, Gemini, DeepSeek och Llama. On-premise och moln. Multi-agent-system, webdesign och SEO fr\u00e5n Trelleborg, Sk\u00e5ne.",
+        "isPartOf": { "@id": "https://breisnerconsulting.se/#organization" },
+        "about": { "@id": "https://breisnerconsulting.se/#organization" },
+        "inLanguage": "sv-SE",
+        "datePublished": "2026-02-18",
+        "dateModified": "2026-02-18",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "h2", ".faq-answer"]
         }
     }
     </script>
@@ -261,7 +309,7 @@
                 "name": "Vad kostar det att anlita en digital byr\u00e5?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Priset varierar beroende p\u00e5 omfattning och tj\u00e4nster. Vi erbjuder alltid en kostnadsfri inledande r\u00e5dgivning d\u00e4r vi kartl\u00e4gger behov och budget. Kontakta oss f\u00f6r ett skr\u00e4ddarsytt f\u00f6rslag."
+                    "text": "Priset varierar beroende p\u00e5 omfattning. En enklare hemsida kan kosta fr\u00e5n 10 000 SEK, medan ett AI-agentprojekt med on-premise-drift typiskt landar p\u00e5 50 000\u2013200 000 SEK. Vi erbjuder alltid en kostnadsfri inledande r\u00e5dgivning d\u00e4r vi kartl\u00e4gger behov och budget."
                 }
             },
             {
@@ -269,7 +317,7 @@
                 "name": "Hur l\u00e5ng tid tar det att se resultat fr\u00e5n SEO?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "SEO \u00e4r en l\u00e5ngsiktig strategi. Vanligtvis ser man f\u00f6rsta f\u00f6rb\u00e4ttringarna inom 2\u20133 m\u00e5nader, men full effekt brukar ta 6\u201312 m\u00e5nader beroende p\u00e5 konkurrens och bransch."
+                    "text": "Enligt branschdata ser de flesta f\u00f6retag f\u00f6rsta f\u00f6rb\u00e4ttringarna inom 2\u20133 m\u00e5nader, med full effekt efter 6\u201312 m\u00e5nader. F\u00f6r AI-s\u00f6kmotorer (ChatGPT, Perplexity, Claude) kan \u00e4ndringar sl\u00e5 igenom inom 4\u20138 veckor eftersom dessa system omindexerar oftare \u00e4n traditionella s\u00f6kmotorer."
                 }
             },
             {
@@ -277,7 +325,31 @@
                 "name": "Kan ni hj\u00e4lpa f\u00f6retag utanf\u00f6r Sk\u00e5ne?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Absolut. Vi arbetar med kunder i hela Sverige. M\u00f6ten sker digitalt eller p\u00e5 plats beroende p\u00e5 \u00f6nskem\u00e5l."
+                    "text": "Ja, vi arbetar med kunder i hela Sverige. AI-utveckling och SEO \u00e4r platsober\u00f6ende \u2014 allt sker digitalt. F\u00f6r on-premise AI-installation kan vi komma p\u00e5 plats vid behov."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Varf\u00f6r v\u00e4lja on-premise AI ist\u00e4llet f\u00f6r moln?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On-premise AI inneb\u00e4r att modellerna k\u00f6rs p\u00e5 er egen h\u00e5rdvara via Ollama. Ingen data l\u00e4mnar era lokaler, vilket uppfyller GDPR och branschspecifika regulatoriska krav. Enligt Gartner ber\u00e4knas 25% av alla f\u00f6retags-AI-l\u00f6sningar k\u00f6ras on-premise senast 2027. Perfekt f\u00f6r v\u00e5rd, finans, juridik och offentlig sektor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Vilka AI-modeller anv\u00e4nder ni?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vi \u00e4r modell-agnostiska och arbetar med Claude (Anthropic), GPT (OpenAI), Gemini (Google), DeepSeek, Llama (Meta) och Mistral. Valet av modell beror p\u00e5 uppgiften \u2014 vi v\u00e4ljer den modell som ger b\u00e4st resultat f\u00f6r ert specifika anv\u00e4ndningsfall, oavsett leverant\u00f6r."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Vad \u00e4r en AI-agent och hur skiljer den sig fr\u00e5n en chatbot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "En AI-agent \u00e4r ett autonomt system som kan utf\u00f6ra uppgifter, fatta beslut och interagera med andra system \u2014 inte bara svara p\u00e5 fr\u00e5gor. Till skillnad fr\u00e5n en chatbot kan en agent k\u00f6ra kod, anropa API:er, skriva rapporter, \u00f6vervaka data och samarbeta med andra agenter i multi-agent-system. Breisner Consulting bygger agenter som agerar, inte bara svarar."
                 }
             },
             {
@@ -285,15 +357,7 @@
                 "name": "Beh\u00f6ver jag en ny hemsida eller kan ni f\u00f6rb\u00e4ttra min befintliga?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Det beror p\u00e5. Vi g\u00f6r alltid en analys av nuvarande sajt f\u00f6rst. Ibland r\u00e4cker det med optimering, ibland \u00e4r en ny sajt det mest kostnadseffektiva."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Vad inneb\u00e4r era AI-utbildningar?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vi erbjuder praktiska workshops d\u00e4r ert team l\u00e4r sig anv\u00e4nda AI-verktyg f\u00f6r textproduktion, bildgenerering, dataanalys och arbetsfl\u00f6desautomation. Anpassat efter er bransch."
+                    "text": "Vi g\u00f6r alltid en analys av nuvarande sajt f\u00f6rst. Ibland r\u00e4cker optimering av hastighet, SEO och inneh\u00e5ll. Ibland \u00e4r en ny sajt det mest kostnadseffektiva \u2014 s\u00e4rskilt om befintlig sajt k\u00f6rs p\u00e5 WordPress med tunga teman (Elementor, Divi) som kan laddas i 4\u20138 sekunder. V\u00e5ra statiska sajter laddar typiskt under 1 sekund."
                 }
             }
         ]
@@ -651,7 +715,34 @@
                         <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </div>
                     <div class="faq-answer">
-                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Priset varierar beroende p&aring; omfattning och tj&auml;nster. Vi erbjuder alltid en kostnadsfri inledande r&aring;dgivning d&auml;r vi kartl&auml;gger behov och budget. Kontakta oss f&ouml;r ett skr&auml;ddarsytt f&ouml;rslag.</p>
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Priset varierar beroende p&aring; omfattning. En enklare hemsida kan kosta fr&aring;n 10 000 SEK, medan ett AI-agentprojekt med on-premise-drift typiskt landar p&aring; 50 000&ndash;200 000 SEK. Vi erbjuder alltid en kostnadsfri inledande r&aring;dgivning d&auml;r vi kartl&auml;gger behov och budget.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Vad &auml;r en AI-agent och hur skiljer den sig fr&aring;n en chatbot?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">En AI-agent &auml;r ett autonomt system som kan utf&ouml;ra uppgifter, fatta beslut och interagera med andra system &mdash; inte bara svara p&aring; fr&aring;gor. Till skillnad fr&aring;n en chatbot kan en agent k&ouml;ra kod, anropa API:er, skriva rapporter, &ouml;vervaka data och samarbeta med andra agenter i multi-agent-system.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Varf&ouml;r v&auml;lja on-premise AI ist&auml;llet f&ouml;r moln?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">On-premise AI inneb&auml;r att modellerna k&ouml;rs p&aring; er egen h&aring;rdvara via Ollama. Ingen data l&auml;mnar era lokaler, vilket uppfyller GDPR och branschspecifika regulatoriska krav. Perfekt f&ouml;r v&aring;rd, finans, juridik och offentlig sektor d&auml;r dataskydd &auml;r avg&ouml;rande.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Vilka AI-modeller anv&auml;nder ni?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Vi &auml;r modell-agnostiska och arbetar med Claude (Anthropic), GPT (OpenAI), Gemini (Google), DeepSeek, Llama (Meta) och Mistral. Vi v&auml;ljer den modell som ger b&auml;st resultat f&ouml;r ert specifika anv&auml;ndningsfall, oavsett leverant&ouml;r.</p>
                     </div>
                 </div>
                 <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
@@ -660,7 +751,7 @@
                         <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </div>
                     <div class="faq-answer">
-                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">SEO &auml;r en l&aring;ngsiktig strategi. Vanligtvis ser man f&ouml;rsta f&ouml;rb&auml;ttringarna inom 2&ndash;3 m&aring;nader, men full effekt brukar ta 6&ndash;12 m&aring;nader beroende p&aring; konkurrens och bransch.</p>
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">F&ouml;rsta f&ouml;rb&auml;ttringarna syns inom 2&ndash;3 m&aring;nader, full effekt inom 6&ndash;12 m&aring;nader. F&ouml;r AI-s&ouml;kmotorer (ChatGPT, Perplexity, Claude) kan &auml;ndringar sl&aring; igenom inom 4&ndash;8 veckor d&aring; dessa system omindexerar oftare &auml;n Google.</p>
                     </div>
                 </div>
                 <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
@@ -669,7 +760,7 @@
                         <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </div>
                     <div class="faq-answer">
-                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Absolut. Vi arbetar med kunder i hela Sverige. M&ouml;ten sker digitalt eller p&aring; plats beroende p&aring; &ouml;nskem&aring;l.</p>
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Ja, vi arbetar med kunder i hela Sverige. AI-utveckling och SEO &auml;r platsober&ouml;ende &mdash; allt sker digitalt. F&ouml;r on-premise AI-installation kan vi komma p&aring; plats vid behov.</p>
                     </div>
                 </div>
                 <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
@@ -678,16 +769,7 @@
                         <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </div>
                     <div class="faq-answer">
-                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Det beror p&aring;. Vi g&ouml;r alltid en analys av nuvarande sajt f&ouml;rst. Ibland r&auml;cker det med optimering, ibland &auml;r en ny sajt det mest kostnadseffektiva.</p>
-                    </div>
-                </div>
-                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Vad inneb&auml;r era AI-utbildningar?</h4>
-                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-                    </div>
-                    <div class="faq-answer">
-                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Vi erbjuder praktiska workshops d&auml;r ert team l&auml;r sig anv&auml;nda AI-verktyg f&ouml;r textproduktion, bildgenerering, dataanalys och arbetsfl&ouml;desautomation. Anpassat efter er bransch.</p>
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Vi analyserar alltid befintlig sajt f&ouml;rst. Ibland r&auml;cker optimering. Men sajter p&aring; WordPress med tunga teman (Elementor, Divi) laddar ofta i 4&ndash;8 sekunder &mdash; v&aring;ra statiska sajter laddar under 1 sekund. D&aring; &auml;r en ny sajt det mest kostnadseffektiva.</p>
                     </div>
                 </div>
             </div>

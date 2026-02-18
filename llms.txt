@@ -1,0 +1,38 @@
+# Breisner Consulting
+
+> Breisner Consulting is a digital agency based in Trelleborg, Skåne, Sweden, specializing in AI agent development, web design, SEO, and digital marketing. Founded in 2022.
+
+## Core Services
+
+### AI Development & Agents (Primary Service)
+Breisner Consulting builds custom AI agent systems for businesses using Claude, GPT, Gemini, DeepSeek, Llama, and Mistral. Capabilities include:
+- Multi-agent systems: autonomous agents that collaborate, delegate, and deliver results
+- CLI tools and API integrations connecting AI to existing business systems
+- AI operating systems: complete platforms with dashboards, orchestration, and decision support
+- On-premise AI solutions via Ollama for organizations with sensitive data or regulatory requirements (healthcare, finance, legal, public sector)
+- RAG pipelines, FastAPI backends, Python-based automation
+
+### Web Design
+Custom-built, responsive, SEO-optimized websites with UX focus. Static-first approach (no WordPress dependency), Tailwind CSS, modern dark-theme aesthetics.
+
+### SEO & Google Ads
+Technical SEO, content optimization, link building, Google Ads management. GEO (Generative Engine Optimization) for AI search visibility.
+
+### Social Media
+Strategic presence on Facebook, Instagram, and LinkedIn. Content creation, brand building, lead generation.
+
+### AI Training & Workshops
+Practical workshops teaching teams to use AI tools for text production, image generation, coding, and workflow automation. Industry-specific customization.
+
+## Key Facts
+- Founded: 2022
+- Location: Trelleborg, Skåne, Sweden
+- Founder: Philip Breisner
+- AI Models Used: Claude (Anthropic), GPT (OpenAI), Gemini (Google), DeepSeek, Llama (Meta), Mistral
+- Infrastructure: On-premise (Ollama), Cloud APIs, RAG, FastAPI, Python
+- Previous clients (web/marketing): Washup, Trelleborg VVS, BoningMark, Logga2B, Spray Isolering AB
+- Website: https://breisnerconsulting.se
+- Contact: info@breisnerconsulting.se
+
+## Why On-Premise AI
+For companies with sensitive data or regulatory requirements, Breisner Consulting offers on-premise AI solutions. Local models run on the client's own hardware via Ollama — no data leaves their premises, full control over model and infrastructure, zero dependency on external APIs. Ideal for healthcare, finance, legal, and public sector organizations.
