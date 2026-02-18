@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 4138.58 2607.87">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-size: 91.12px;
+      }
+
+      .st0, .st1 {
+        fill: #010101;
+        font-family: AXIS-ExtraBold, AXIS;
+        font-weight: 700;
+      }
+
+      .st2 {
+        filter: url(#outer-glow-1);
+        stroke: #010101;
+      }
+
+      .st2, .st3, .st4, .st5, .st6, .st7, .st8 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .st3 {
+        stroke: url(#linear-gradient2);
+      }
+
+      .st4 {
+        stroke: url(#linear-gradient1);
+      }
+
+      .st5 {
+        stroke: url(#linear-gradient3);
+      }
+
+      .st6 {
+        stroke: url(#linear-gradient5);
+      }
+
+      .st7 {
+        stroke: url(#linear-gradient4);
+      }
+
+      .st1 {
+        font-size: 69.1px;
+      }
+
+      .st8 {
+        stroke: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1825.01" y1="1287.93" x2="1956.11" y2="1156.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#010101"/>
+      <stop offset="0" stop-color="#020202"/>
+      <stop offset=".12" stop-color="#3c3c3c"/>
+      <stop offset=".25" stop-color="#707070"/>
+      <stop offset=".37" stop-color="#9c9c9c"/>
+      <stop offset=".5" stop-color="#bfbfbf"/>
+      <stop offset=".62" stop-color="#dbdbdb"/>
+      <stop offset=".74" stop-color="#efefef"/>
+      <stop offset=".87" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="1662.45" y1="1156.84" x2="1793.55" y2="1287.93" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".13" stop-color="#fbfbfb"/>
+      <stop offset=".26" stop-color="#efefef"/>
+      <stop offset=".38" stop-color="#dbdbdb"/>
+      <stop offset=".5" stop-color="#bfbfbf"/>
+      <stop offset=".63" stop-color="#9c9c9c"/>
+      <stop offset=".75" stop-color="#707070"/>
+      <stop offset=".88" stop-color="#3c3c3c"/>
+      <stop offset="1" stop-color="#020202"/>
+      <stop offset="1" stop-color="#010101"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="1650.46" y1="1429.72" x2="1805.54" y2="1340.18" xlink:href="#linear-gradient1"/>
+    <linearGradient id="linear-gradient3" x1="1813.02" y1="1340.18" x2="1968.1" y2="1429.72" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient4" x1="1904.82" y1="1304.65" x2="2035.91" y2="1304.65" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#010101"/>
+      <stop offset=".06" stop-color="#252525"/>
+      <stop offset=".16" stop-color="#585858"/>
+      <stop offset=".26" stop-color="#848484"/>
+      <stop offset=".37" stop-color="#aaa"/>
+      <stop offset=".47" stop-color="#c9c9c9"/>
+      <stop offset=".59" stop-color="#e1e1e1"/>
+      <stop offset=".71" stop-color="#f1f1f1"/>
+      <stop offset=".84" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient5" x1="1582.65" y1="1304.65" x2="1713.74" y2="1304.65" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".16" stop-color="#fbfbfb"/>
+      <stop offset=".29" stop-color="#f1f1f1"/>
+      <stop offset=".41" stop-color="#e0e0e0"/>
+      <stop offset=".52" stop-color="#c7c7c7"/>
+      <stop offset=".63" stop-color="#a8a8a8"/>
+      <stop offset=".74" stop-color="#818181"/>
+      <stop offset=".85" stop-color="#535353"/>
+      <stop offset=".95" stop-color="#1f1f1f"/>
+      <stop offset="1" stop-color="#010101"/>
+    </linearGradient>
+    <filter id="outer-glow-1" x="1743.73" y="1239.1" width="131.09" height="131.09" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#010101" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect class="st8" x="1827.01" y="1158.84" width="127.09" height="127.09"/>
+  <rect class="st4" x="1664.45" y="1158.84" width="127.09" height="127.09"/>
+  <rect class="st3" x="1664.45" y="1321.4" width="127.09" height="127.09"/>
+  <rect class="st5" x="1827.01" y="1321.4" width="127.09" height="127.09"/>
+  <rect class="st7" x="1906.82" y="1241.1" width="127.09" height="127.09"/>
+  <rect class="st6" x="1584.65" y="1241.1" width="127.09" height="127.09"/>
+  <rect class="st2" x="1745.73" y="1241.1" width="127.09" height="127.09"/>
+  <text class="st0" transform="translate(2030.87 1304.98)"><tspan x="0" y="0">Breisner</tspan></text>
+  <text class="st1" transform="translate(2034.38 1366.71)"><tspan x="0" y="0">Consulting </tspan></text>
+</svg>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-utveckling, Webdesign &amp; SEO i Sk&aring;ne | Breisner Consulting</title>
+    <meta name="description" content="Breisner Consulting bygger AI-agenter med Claude, GPT, Gemini, DeepSeek och Llama. On-premise och moln. Multi-agent-system, CLI, API, webdesign och SEO. Boka kostnadsfri r&aring;dgivning.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://breisnerconsulting.se/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://breisnerconsulting.se/">
+    <meta property="og:title" content="AI-utveckling, Webdesign &amp; SEO i Sk&aring;ne | Breisner Consulting">
+    <meta property="og:description" content="Vi bygger AI-agenter och digitala l&ouml;sningar. Webdesign, SEO och marknadsf&ouml;ring f&ouml;r f&ouml;retag i Sk&aring;ne.">
+    <meta property="og:image" content="https://breisnerconsulting.se/assets/logo.png">
+    <meta property="og:locale" content="sv_SE">
+    <meta property="og:site_name" content="Breisner Consulting">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI-utveckling, Webdesign &amp; SEO i Sk&aring;ne | Breisner Consulting">
+    <meta name="twitter:description" content="Vi bygger AI-agenter och digitala l&ouml;sningar. Webdesign, SEO och marknadsf&ouml;ring f&ouml;r f&ouml;retag i Sk&aring;ne.">
+    <meta name="twitter:image" content="https://breisnerconsulting.se/assets/logo.png">
+
+    <!-- Geo -->
+    <meta name="geo.region" content="SE-M">
+    <meta name="geo.placename" content="Trelleborg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; overflow-x: hidden; scroll-behavior: smooth; font-size: 18px; position: relative; }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                linear-gradient(rgba(30, 41, 59, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 41, 59, 0.12) 1px, transparent 1px),
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(147, 53, 182, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 60% at 95% 40%, rgba(96, 165, 250, 0.14) 0%, transparent 55%),
+                radial-gradient(ellipse 70% 45% at 55% 100%, rgba(168, 85, 247, 0.10) 0%, transparent 50%),
+                radial-gradient(ellipse 45% 55% at 5% 50%, rgba(96, 165, 250, 0.10) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 50% at 50% 50%, rgba(147, 53, 182, 0.05) 0%, transparent 60%),
+                linear-gradient(180deg, #050505 0%, #0a0a14 50%, #050505 100%);
+            background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: -20%;
+            width: 40%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(147, 53, 182, 0.04) 25%,
+                rgba(96, 165, 250, 0.035) 45%,
+                rgba(168, 85, 247, 0.03) 65%,
+                rgba(96, 165, 250, 0.035) 85%,
+                transparent 100%
+            );
+            animation: scan 12s ease-in-out infinite;
+        }
+        @keyframes scan { 0%, 100% { left: -40%; } 50% { left: 100%; } }
+        /* Logo pulse */
+        .logo-pulse { animation: logo-glow 3s ease-in-out infinite; }
+        @keyframes logo-glow { 0%, 100% { filter: drop-shadow(0 0 4px rgba(147,53,182,0.3)) drop-shadow(0 0 12px rgba(96,165,250,0.1)); } 50% { filter: drop-shadow(0 0 12px rgba(147,53,182,0.6)) drop-shadow(0 0 30px rgba(96,165,250,0.25)); } }
+        /* Hero swirl vortex */
+        .hero-swirl {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(147, 53, 182, 0.25) 30deg,
+                transparent 60deg,
+                rgba(96, 165, 250, 0.2) 120deg,
+                transparent 150deg,
+                rgba(168, 85, 247, 0.2) 210deg,
+                transparent 240deg,
+                rgba(96, 165, 250, 0.15) 300deg,
+                transparent 330deg,
+                rgba(147, 53, 182, 0.25) 360deg
+            );
+            filter: blur(60px);
+            animation: swirl-spin 20s linear infinite;
+            opacity: 0.7;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-swirl::after {
+            content: '';
+            position: absolute;
+            inset: 15%;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 180deg,
+                transparent 0deg,
+                rgba(96, 165, 250, 0.3) 40deg,
+                transparent 80deg,
+                rgba(147, 53, 182, 0.25) 160deg,
+                transparent 200deg,
+                rgba(168, 85, 247, 0.2) 280deg,
+                transparent 320deg,
+                rgba(96, 165, 250, 0.3) 360deg
+            );
+            filter: blur(40px);
+            animation: swirl-spin 14s linear infinite reverse;
+        }
+        @keyframes swirl-spin { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+        @media (min-width: 768px) { .hero-swirl { width: 900px; height: 900px; } }
+        .liquid-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(25px) saturate(180%); -webkit-backdrop-filter: blur(25px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); transition: all 0.5s ease; }
+        @media (min-width: 768px) { .liquid-glass { border-radius: 40px; } }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+        a, button { touch-action: manipulation; }
+        .cta-btn { background: linear-gradient(135deg, rgba(147, 53, 182, 0.35), rgba(96, 165, 250, 0.25)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 0 20px rgba(147, 53, 182, 0.4), 0 0 50px rgba(147, 53, 182, 0.2), 0 0 80px rgba(96, 165, 250, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        .cta-btn:hover { background: linear-gradient(135deg, rgba(147, 53, 182, 0.5), rgba(96, 165, 250, 0.35)); border-color: rgba(168, 85, 247, 0.5); box-shadow: 0 0 30px rgba(147, 53, 182, 0.6), 0 0 60px rgba(147, 53, 182, 0.3), 0 0 100px rgba(96, 165, 250, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+        .faq-answer.open { max-height: 200px; }
+        .faq-chevron { transition: transform 0.3s ease; }
+        .faq-chevron.open { transform: rotate(180deg); }
+        .icon-glow { position: relative; }
+        .icon-glow::after { content: ''; position: absolute; inset: -4px; border-radius: inherit; background: inherit; filter: blur(14px); opacity: 0.5; z-index: -1; }
+        .icon-glow-lg::after { filter: blur(20px); opacity: 0.6; }
+        @keyframes pulse-glow { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
+        .icon-pulse::after { animation: pulse-glow 3s ease-in-out infinite; }
+        .featured-card { background: linear-gradient(135deg, rgba(147, 53, 182, 0.08), rgba(96, 165, 250, 0.05)); border: 1px solid rgba(147, 53, 182, 0.15); }
+        .featured-card:hover { border-color: rgba(147, 53, 182, 0.3); box-shadow: 0 0 40px rgba(147, 53, 182, 0.1), 0 0 80px rgba(96, 165, 250, 0.05); }
+        .process-line { position: absolute; top: 20px; left: 20px; right: 20px; height: 2px; background: linear-gradient(90deg, #9335B6, #60a5fa); opacity: 0.3; z-index: 0; }
+        @media (max-width: 767px) { .process-line { display: none; } }
+    </style>
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Breisner Consulting",
+        "alternateName": "Breisner Consulting AB",
+        "description": "Digital byr\u00e5 i Sk\u00e5ne. AI-utveckling, AI-agenter, webdesign, SEO och digital marknadsf\u00f6ring f\u00f6r f\u00f6retag som vill v\u00e4xa.",
+        "url": "https://breisnerconsulting.se",
+        "email": "info@breisnerconsulting.se",
+        "image": "https://breisnerconsulting.se/assets/logo.png",
+        "logo": "https://breisnerconsulting.se/assets/logo.png",
+        "foundingDate": "2022",
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 55.376,
+                "longitude": 13.157
+            },
+            "geoRadius": "150000"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Trelleborg",
+            "addressRegion": "Sk\u00e5ne",
+            "addressCountry": "SE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.376,
+            "longitude": 13.157
+        },
+        "knowsAbout": [
+            "AI-utveckling",
+            "AI-agenter",
+            "Claude AI",
+            "OpenAI",
+            "GPT",
+            "Google Gemini",
+            "DeepSeek",
+            "Llama",
+            "Mistral",
+            "LLM-applikationer",
+            "RAG-pipelines",
+            "Multi-agent-system",
+            "On-premise AI",
+            "Ollama",
+            "Lokal AI-drift",
+            "AI CLI-verktyg",
+            "AI API-integrationer",
+            "AI-operativsystem",
+            "S\u00f6kmotoroptimering",
+            "SEO",
+            "Google Ads",
+            "Webdesign",
+            "Sociala Medier",
+            "AI-utbildningar",
+            "Digital marknadsf\u00f6ring"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digitala tj\u00e4nster",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI-utveckling & Agenter",
+                        "description": "Skr\u00e4ddarsydda AI-agenter med Claude, GPT, Gemini, DeepSeek, Llama och Mistral. Multi-agent-system, CLI-verktyg, API-integrationer, AI-operativsystem och on-premise-l\u00f6sningar via Ollama f\u00f6r f\u00f6retag med k\u00e4nslig data"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "SEO & Google Ads",
+                        "description": "Teknisk SEO, inneh\u00e5llsoptimering, l\u00e4nkbyggande och annonshantering f\u00f6r \u00f6kad synlighet"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sociala Medier",
+                        "description": "Strategier f\u00f6r Facebook, Instagram och LinkedIn som bygger varum\u00e4rke och driver leads"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Webdesign",
+                        "description": "Skr\u00e4ddarsydd, responsiv och SEO-optimerad webdesign med UX-fokus"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI-utbildningar",
+                        "description": "Praktiska AI-utbildningar f\u00f6r team som vill effektivisera arbetsfl\u00f6den"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Vad kostar det att anlita en digital byr\u00e5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Priset varierar beroende p\u00e5 omfattning och tj\u00e4nster. Vi erbjuder alltid en kostnadsfri inledande r\u00e5dgivning d\u00e4r vi kartl\u00e4gger behov och budget. Kontakta oss f\u00f6r ett skr\u00e4ddarsytt f\u00f6rslag."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hur l\u00e5ng tid tar det att se resultat fr\u00e5n SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SEO \u00e4r en l\u00e5ngsiktig strategi. Vanligtvis ser man f\u00f6rsta f\u00f6rb\u00e4ttringarna inom 2\u20133 m\u00e5nader, men full effekt brukar ta 6\u201312 m\u00e5nader beroende p\u00e5 konkurrens och bransch."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kan ni hj\u00e4lpa f\u00f6retag utanf\u00f6r Sk\u00e5ne?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolut. Vi arbetar med kunder i hela Sverige. M\u00f6ten sker digitalt eller p\u00e5 plats beroende p\u00e5 \u00f6nskem\u00e5l."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Beh\u00f6ver jag en ny hemsida eller kan ni f\u00f6rb\u00e4ttra min befintliga?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Det beror p\u00e5. Vi g\u00f6r alltid en analys av nuvarande sajt f\u00f6rst. Ibland r\u00e4cker det med optimering, ibland \u00e4r en ny sajt det mest kostnadseffektiva."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Vad inneb\u00e4r era AI-utbildningar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vi erbjuder praktiska workshops d\u00e4r ert team l\u00e4r sig anv\u00e4nda AI-verktyg f\u00f6r textproduktion, bildgenerering, dataanalys och arbetsfl\u00f6desautomation. Anpassat efter er bransch."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="text-slate-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 py-2 px-4 md:py-3 md:px-6">
+        <div class="max-w-7xl mx-auto liquid-glass py-1 px-4 md:py-2 md:px-6 flex justify-between items-center">
+            <a href="#hem" class="flex items-center gap-2">
+                <img src="assets/logo-white.png" alt="Breisner Consulting" class="h-8 md:h-10 logo-pulse">
+            </a>
+            <div class="hidden md:flex gap-8 text-[13px] font-semibold uppercase tracking-widest text-slate-400">
+                <a href="#hem" class="hover:text-white transition-colors">Hem</a>
+                <a href="#tjanster" class="hover:text-white transition-colors">Tj&auml;nster</a>
+                <a href="#om" class="hover:text-white transition-colors">Om oss</a>
+                <a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:info@breisnerconsulting.se?subject=Boka%20m%C3%B6te" class="hidden sm:block cta-btn text-white px-6 py-2.5 rounded-full text-[12px] font-bold tracking-widest uppercase">Boka m&ouml;te</a>
+                <button onclick="toggleMenu()" class="md:hidden text-white p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="menu" class="mobile-menu mt-2 max-w-7xl mx-auto liquid-glass p-6 md:hidden">
+            <div class="flex flex-col gap-2 text-[14px] font-semibold uppercase tracking-widest text-slate-400">
+                <a href="#hem" onclick="toggleMenu()" class="py-3 px-2 block">Hem</a>
+                <a href="#tjanster" onclick="toggleMenu()" class="py-3 px-2 block">Tj&auml;nster</a>
+                <a href="#om" onclick="toggleMenu()" class="py-3 px-2 block">Om oss</a>
+                <a href="#kontakt" onclick="toggleMenu()" class="py-3 px-2 block">Kontakt</a>
+                <a href="mailto:info@breisnerconsulting.se?subject=Boka%20m%C3%B6te" class="cta-btn text-white py-4 rounded-xl text-center font-bold text-[13px] tracking-widest uppercase">Boka m&ouml;te</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hem" class="pt-[120px] pb-[80px] md:pb-[120px] px-6 min-h-screen flex items-center relative overflow-hidden">
+        <!-- Swirl vortex -->
+        <div class="hero-swirl"></div>
+        <div class="max-w-[850px] mx-auto text-center relative z-10">
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] md:text-[12px] font-semibold text-purple-400 tracking-wide">AI-utveckling</span>
+                <span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] md:text-[12px] font-semibold text-blue-400 tracking-wide">Webdesign</span>
+                <span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] md:text-[12px] font-semibold text-purple-400 tracking-wide">SEO &amp; Ads</span>
+            </div>
+            <h1 class="text-[32px] md:text-[52px] font-bold text-white tracking-tight leading-[1.1] mb-4">Vi bygger <span class="gradient-text">AI-agenter</span> som driver ert f&ouml;retag fram&aring;t</h1>
+            <h2 class="text-[18px] md:text-[22px] font-medium text-slate-400 mb-8">AI-utveckling, webdesign &amp; digital marknadsf&ouml;ring fr&aring;n Sk&aring;ne</h2>
+            <div class="flex flex-col md:flex-row gap-4 justify-center mb-16">
+                <a href="mailto:info@breisnerconsulting.se?subject=Kostnadsfri%20r%C3%A5dgivning" class="cta-btn text-white px-10 py-4 rounded-full font-bold text-[13px] tracking-widest uppercase">Boka kostnadsfri r&aring;dgivning</a>
+                <a href="#tjanster" class="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-full font-bold text-[13px] tracking-widest hover:bg-white/10 transition-all uppercase">V&aring;ra tj&auml;nster</a>
+            </div>
+            <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto">
+                <div>
+                    <div class="text-white font-bold text-[28px] md:text-[36px] mb-1">2022</div>
+                    <div class="text-[11px] text-slate-500 font-medium tracking-wide">Grundat</div>
+                </div>
+                <div>
+                    <div class="text-white font-bold text-[28px] md:text-[36px] mb-1">6+</div>
+                    <div class="text-[11px] text-slate-500 font-medium tracking-wide">AI-modeller</div>
+                </div>
+                <div>
+                    <div class="text-white font-bold text-[28px] md:text-[36px] mb-1">Sk&aring;ne</div>
+                    <div class="text-[11px] text-slate-500 font-medium tracking-wide">Baserat i</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tj&auml;nster -->
+    <section id="tjanster" class="py-20 md:py-28 px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-4">Vad vi g&ouml;r</p>
+                <h2 class="text-[28px] md:text-[40px] font-bold text-white mb-4 tracking-tight leading-[1.1]">Tj&auml;nster som driver <span class="gradient-text">tillv&auml;xt</span></h2>
+                <p class="text-[16px] text-slate-500 max-w-xl mx-auto leading-relaxed">Fr&aring;n AI-agenter och automation till synlighet i s&ouml;kmotorer &mdash; allt under ett tak.</p>
+            </div>
+            <!-- FEATURED: AI-utveckling & Agenter -->
+            <div class="liquid-glass featured-card p-8 md:p-12 mb-8 md:mb-10 transition-all">
+                <div class="md:flex md:items-start md:gap-12">
+                    <div class="flex-shrink-0 mb-8 md:mb-0">
+                        <div class="w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-purple-500/15 icon-glow icon-glow-lg icon-pulse flex items-center justify-center mx-auto md:mx-0">
+                            <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 48 48" fill="none">
+                                <!-- Central brain/core -->
+                                <circle cx="24" cy="24" r="6" stroke="url(#iconGrad)" stroke-width="1.5" fill="rgba(147,53,182,0.1)" />
+                                <circle cx="24" cy="24" r="2" fill="url(#iconGrad)" opacity="0.8" />
+                                <!-- Agent nodes -->
+                                <circle cx="10" cy="12" r="3.5" stroke="#a855f7" stroke-width="1.2" fill="rgba(168,85,247,0.08)" />
+                                <circle cx="38" cy="12" r="3.5" stroke="#60a5fa" stroke-width="1.2" fill="rgba(96,165,250,0.08)" />
+                                <circle cx="8" cy="36" r="3.5" stroke="#60a5fa" stroke-width="1.2" fill="rgba(96,165,250,0.08)" />
+                                <circle cx="40" cy="36" r="3.5" stroke="#a855f7" stroke-width="1.2" fill="rgba(168,85,247,0.08)" />
+                                <!-- Connections: nodes to core -->
+                                <line x1="13" y1="14" x2="19" y2="21" stroke="#a855f7" stroke-width="1" opacity="0.5" />
+                                <line x1="35" y1="14" x2="29" y2="21" stroke="#60a5fa" stroke-width="1" opacity="0.5" />
+                                <line x1="11" y1="33" x2="19" y2="27" stroke="#60a5fa" stroke-width="1" opacity="0.5" />
+                                <line x1="37" y1="33" x2="29" y2="27" stroke="#a855f7" stroke-width="1" opacity="0.5" />
+                                <!-- Action arrows outward (results) -->
+                                <path d="M10 8V4" stroke="#a855f7" stroke-width="1.2" stroke-linecap="round" opacity="0.7" />
+                                <path d="M8 5.5L10 3.5L12 5.5" stroke="#a855f7" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                                <path d="M38 8V4" stroke="#60a5fa" stroke-width="1.2" stroke-linecap="round" opacity="0.7" />
+                                <path d="M36 5.5L38 3.5L40 5.5" stroke="#60a5fa" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                                <path d="M4 36H1" stroke="#60a5fa" stroke-width="1.2" stroke-linecap="round" opacity="0.7" />
+                                <path d="M2.5 34L0.5 36L2.5 38" stroke="#60a5fa" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                                <path d="M44 36H47" stroke="#a855f7" stroke-width="1.2" stroke-linecap="round" opacity="0.7" />
+                                <path d="M45.5 34L47.5 36L45.5 38" stroke="#a855f7" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                                <!-- Pulse rings on core -->
+                                <circle cx="24" cy="24" r="10" stroke="url(#iconGrad)" stroke-width="0.5" opacity="0.25" stroke-dasharray="3 3" />
+                                <circle cx="24" cy="24" r="15" stroke="url(#iconGrad)" stroke-width="0.4" opacity="0.12" stroke-dasharray="2 4" />
+                                <defs>
+                                    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#a855f7" />
+                                        <stop offset="100%" stop-color="#60a5fa" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-3">Huvudtj&auml;nst</p>
+                        <h3 class="text-white font-bold text-[24px] md:text-[32px] mb-4 tracking-tight leading-[1.15]">AI-utveckling &amp; <span class="gradient-text">Agenter</span></h3>
+                        <p class="text-[15px] md:text-[16px] text-slate-400 leading-relaxed mb-4">Vi bygger AI-system som levererar m&auml;tbara resultat. Autonoma agenter, CLI-verktyg, API-integrationer och hela operativsystem &mdash; drivna av Claude, GPT, Gemini, DeepSeek, Llama, Mistral och fler. Fr&aring;n prototyp till produktion: agenter som agerar, inte bara svarar.</p>
+                        <p class="text-[14px] text-slate-500 leading-relaxed mb-8">F&ouml;r f&ouml;retag med k&auml;nslig data eller regulatoriska krav erbjuder vi <strong class="text-slate-300">on-premise-l&ouml;sningar</strong> &mdash; lokala AI-modeller som k&ouml;rs p&aring; er egen h&aring;rdvara via Ollama. Ingen data l&auml;mnar era v&auml;ggar, full kontroll &ouml;ver modell och infrastruktur, och noll beroende av externa API:er. Perfekt f&ouml;r v&aring;rd, finans, juridik och offentlig sektor.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
+                            <!-- Sub: Agenter & Multi-agent -->
+                            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/10 icon-glow flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none">
+                                        <circle cx="10" cy="4" r="2.5" stroke="#a855f7" stroke-width="1.2" fill="rgba(168,85,247,0.1)" />
+                                        <circle cx="4" cy="15" r="2.5" stroke="#a855f7" stroke-width="1.2" fill="rgba(168,85,247,0.1)" />
+                                        <circle cx="16" cy="15" r="2.5" stroke="#60a5fa" stroke-width="1.2" fill="rgba(96,165,250,0.1)" />
+                                        <line x1="8.5" y1="6" x2="5.5" y2="13" stroke="#a855f7" stroke-width="0.8" opacity="0.5" />
+                                        <line x1="11.5" y1="6" x2="14.5" y2="13" stroke="#60a5fa" stroke-width="0.8" opacity="0.5" />
+                                        <line x1="6.5" y1="15" x2="13.5" y2="15" stroke="#a855f7" stroke-width="0.8" opacity="0.4" stroke-dasharray="2 2" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-semibold text-[14px] mb-1">Multi-agent-system</h4>
+                                <p class="text-[12px] text-slate-500 leading-relaxed">Agenter som samarbetar, delegerar och levererar resultat autonomt.</p>
+                            </div>
+                            <!-- Sub: CLI & API -->
+                            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 icon-glow flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none">
+                                        <rect x="1" y="3" width="18" height="14" rx="2" stroke="#60a5fa" stroke-width="1.2" fill="rgba(96,165,250,0.05)" />
+                                        <path d="M5 8l3 2.5L5 13" stroke="#60a5fa" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                                        <line x1="10" y1="13" x2="15" y2="13" stroke="#a855f7" stroke-width="1.3" stroke-linecap="round" opacity="0.7" />
+                                        <circle cx="16" cy="5.5" r="0.8" fill="#a855f7" opacity="0.6" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-semibold text-[14px] mb-1">CLI &amp; API-l&ouml;sningar</h4>
+                                <p class="text-[12px] text-slate-500 leading-relaxed">Terminalkraft och API-integrationer som kopplar AI till era befintliga system.</p>
+                            </div>
+                            <!-- Sub: AI OS -->
+                            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/10 icon-glow flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none">
+                                        <rect x="2" y="2" width="7" height="7" rx="1.5" stroke="#a855f7" stroke-width="1" fill="rgba(168,85,247,0.08)" />
+                                        <rect x="11" y="2" width="7" height="7" rx="1.5" stroke="#60a5fa" stroke-width="1" fill="rgba(96,165,250,0.08)" />
+                                        <rect x="2" y="11" width="7" height="7" rx="1.5" stroke="#60a5fa" stroke-width="1" fill="rgba(96,165,250,0.08)" />
+                                        <rect x="11" y="11" width="7" height="7" rx="1.5" stroke="#a855f7" stroke-width="1" fill="rgba(168,85,247,0.08)" />
+                                        <circle cx="5.5" cy="5.5" r="1.2" fill="#a855f7" opacity="0.5" />
+                                        <circle cx="14.5" cy="5.5" r="1.2" fill="#60a5fa" opacity="0.5" />
+                                        <path d="M3.5 14l2 1.5-2 1.5" stroke="#60a5fa" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                                        <line x1="12.5" y1="14.5" x2="16.5" y2="14.5" stroke="#a855f7" stroke-width="0.9" stroke-linecap="round" opacity="0.5" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-semibold text-[14px] mb-1">AI-operativsystem</h4>
+                                <p class="text-[12px] text-slate-500 leading-relaxed">Kompletta AI-drivna plattformar &mdash; dashboards, orkestrering och beslutsst&ouml;d.</p>
+                            </div>
+                        </div>
+                        <p class="text-[11px] font-semibold uppercase tracking-widest text-slate-500 mb-3">Modeller &amp; plattformar</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-purple-400/70 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/10">Claude</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-blue-400/70 bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-500/10">GPT / OpenAI</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-purple-400/70 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/10">Gemini</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-blue-400/70 bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-500/10">DeepSeek</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">Llama</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">Mistral</span>
+                        </div>
+                        <p class="text-[11px] font-semibold uppercase tracking-widest text-slate-500 mb-3">Infrastruktur</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-emerald-400/70 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/10">On-premise</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-emerald-400/70 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/10">Ollama</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">CLI</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">API</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">RAG</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">Python</span>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400/60 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">FastAPI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining services: 2x2 grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Webdesign -->
+                <div class="liquid-glass p-8 md:p-10 hover:border-purple-500/20 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 icon-glow flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-bold text-[18px] md:text-[20px] mb-3">Webdesign</h3>
+                    <p class="text-[14px] text-slate-500 leading-relaxed mb-4">Skr&auml;ddarsydda hemsidor som &auml;r snabba, responsiva och SEO-optimerade fr&aring;n grunden. Modern design med fokus p&aring; UX som konverterar bes&ouml;kare till kunder.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Responsiv</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">SEO-optimerad</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">UX-design</span>
+                    </div>
+                </div>
+                <!-- SEO & Ads -->
+                <div class="liquid-glass p-8 md:p-10 hover:border-purple-500/20 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 icon-glow flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-bold text-[18px] md:text-[20px] mb-3">SEO &amp; Ads</h3>
+                    <p class="text-[14px] text-slate-500 leading-relaxed mb-4">Teknisk SEO, inneh&aring;llsoptimering och l&auml;nkbyggande som f&ouml;rb&auml;ttrar din ranking. Google Ads och annonser som ger m&auml;tbar avkastning p&aring; varje krona.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Teknisk SEO</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Google Ads</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">L&auml;nkbyggande</span>
+                    </div>
+                </div>
+                <!-- Sociala Medier -->
+                <div class="liquid-glass p-8 md:p-10 hover:border-purple-500/20 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 icon-glow flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-bold text-[18px] md:text-[20px] mb-3">Sociala Medier</h3>
+                    <p class="text-[14px] text-slate-500 leading-relaxed mb-4">Strategisk n&auml;rvaro p&aring; Facebook, Instagram och LinkedIn. Vi skapar inneh&aring;ll som bygger varum&auml;rke, &ouml;kar engagemang och driver kvalificerade leads.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Facebook</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Instagram</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">LinkedIn</span>
+                    </div>
+                </div>
+                <!-- AI-utbildningar -->
+                <div class="liquid-glass p-8 md:p-10 hover:border-purple-500/20 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 icon-glow flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-bold text-[18px] md:text-[20px] mb-3">AI-utbildningar</h3>
+                    <p class="text-[14px] text-slate-500 leading-relaxed mb-4">Praktiska workshops d&auml;r ert team l&auml;r sig AI-verktyg f&ouml;r textproduktion, bildgenerering, kodning och automation &mdash; anpassat efter er bransch.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Workshops</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">Prompt engineering</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-600 bg-white/5 px-3 py-1 rounded-full">F&ouml;retagsanpassat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Om Oss -->
+    <section id="om" class="py-20 md:py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+                <div class="space-y-8 md:space-y-10">
+                    <div>
+                        <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-4">Om oss</p>
+                        <h2 class="text-[28px] md:text-[40px] font-bold text-white mb-6 tracking-tight leading-[1.1]">Digital partner med <span class="gradient-text">lokalt fokus</span></h2>
+                        <p class="text-slate-400 text-[16px] md:text-[18px] leading-relaxed mb-6">Breisner Consulting grundades 2022 i Trelleborg med fokus p&aring; webdesign och digital marknadsf&ouml;ring. Sedan dess har vi utvecklats till att &auml;ven bygga AI-agenter, LLM-applikationer och skr&auml;ddarsydda automationsl&ouml;sningar.</p>
+                        <p class="text-slate-500 text-[14px] leading-relaxed">Fr&aring;n multi-agent-system och on-premise AI till webbsajter och SEO &mdash; vi kombinerar &aring;ratal av digital erfarenhet med djup teknisk AI-kompetens. Resultatet: automation som fungerar och synlighet som konverterar.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-8 md:p-12 border-purple-500/20">
+                    <div class="grid grid-cols-2 gap-6 md:gap-8 mb-8">
+                        <div>
+                            <div class="text-white font-bold text-[28px] mb-1">2022</div>
+                            <div class="text-[11px] text-slate-500 font-medium tracking-wide">Grundat</div>
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-[28px] mb-1">Sk&aring;ne</div>
+                            <div class="text-[11px] text-slate-500 font-medium tracking-wide">Baserat i</div>
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-[28px] mb-1">6+</div>
+                            <div class="text-[11px] text-slate-500 font-medium tracking-wide">AI-modeller</div>
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-[28px] mb-1">100%</div>
+                            <div class="text-[11px] text-slate-500 font-medium tracking-wide">Resultatfokus</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/5 pt-6">
+                        <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-3">Webb &amp; marknadsforing &mdash; urval av kunder</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="text-[12px] text-slate-500 bg-white/5 px-3 py-1.5 rounded-full">Washup</span>
+                            <span class="text-[12px] text-slate-500 bg-white/5 px-3 py-1.5 rounded-full">Trelleborg VVS</span>
+                            <span class="text-[12px] text-slate-500 bg-white/5 px-3 py-1.5 rounded-full">BoningMark</span>
+                            <span class="text-[12px] text-slate-500 bg-white/5 px-3 py-1.5 rounded-full">Logga2B</span>
+                            <span class="text-[12px] text-slate-500 bg-white/5 px-3 py-1.5 rounded-full">Spray Isolering AB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 md:py-28 px-6 bg-[#050505]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-4">Hur vi jobbar</p>
+                <h2 class="text-[28px] md:text-[40px] font-bold text-white mb-4 tracking-tight leading-[1.1]">Fr&aring;n analys till <span class="gradient-text">resultat</span></h2>
+                <p class="text-[16px] text-slate-500 max-w-xl mx-auto leading-relaxed">En strukturerad process som s&auml;kerst&auml;ller att varje insats ger m&auml;tbar effekt.</p>
+            </div>
+            <div class="relative">
+                <div class="process-line"></div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4">
+                    <div class="relative text-center md:text-left">
+                        <div class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-[14px] flex items-center justify-center mx-auto md:mx-0 mb-4 relative z-10">1</div>
+                        <h3 class="text-white font-semibold text-[16px] mb-2">Analys &amp; Nul&auml;ge</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">Vi kartl&auml;gger nuvarande digital n&auml;rvaro, konkurrenter och m&ouml;jligheter.</p>
+                    </div>
+                    <div class="relative text-center md:text-left">
+                        <div class="w-10 h-10 rounded-full bg-purple-600/80 text-white font-bold text-[14px] flex items-center justify-center mx-auto md:mx-0 mb-4 relative z-10">2</div>
+                        <h3 class="text-white font-semibold text-[16px] mb-2">Strategi &amp; Plan</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">Skr&auml;ddarsydd handlingsplan med tydliga m&aring;l, tidsramar och KPI:er.</p>
+                    </div>
+                    <div class="relative text-center md:text-left">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/80 text-white font-bold text-[14px] flex items-center justify-center mx-auto md:mx-0 mb-4 relative z-10">3</div>
+                        <h3 class="text-white font-semibold text-[16px] mb-2">Genomf&ouml;rande</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">Vi implementerar strategin &mdash; fr&aring;n tekniska &aring;tg&auml;rder till inneh&aring;llsproduktion.</p>
+                    </div>
+                    <div class="relative text-center md:text-left">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/60 text-white font-bold text-[14px] flex items-center justify-center mx-auto md:mx-0 mb-4 relative z-10">4</div>
+                        <h3 class="text-white font-semibold text-[16px] mb-2">Uppf&ouml;ljning</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">M&aring;natlig rapportering, optimering och justering utifr&aring;n data och resultat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 md:py-28 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10 md:mb-14">
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-4">FAQ</p>
+                <h2 class="text-[28px] md:text-[36px] font-bold text-white mb-4 tracking-tight">Vanliga fr&aring;gor</h2>
+                <p class="text-[15px] text-slate-500">Svar p&aring; det vi oftast f&aring;r h&ouml;ra fr&aring;n potentiella kunder.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Vad kostar det att anlita en digital byr&aring;?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Priset varierar beroende p&aring; omfattning och tj&auml;nster. Vi erbjuder alltid en kostnadsfri inledande r&aring;dgivning d&auml;r vi kartl&auml;gger behov och budget. Kontakta oss f&ouml;r ett skr&auml;ddarsytt f&ouml;rslag.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Hur l&aring;ng tid tar det att se resultat fr&aring;n SEO?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">SEO &auml;r en l&aring;ngsiktig strategi. Vanligtvis ser man f&ouml;rsta f&ouml;rb&auml;ttringarna inom 2&ndash;3 m&aring;nader, men full effekt brukar ta 6&ndash;12 m&aring;nader beroende p&aring; konkurrens och bransch.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Kan ni hj&auml;lpa f&ouml;retag utanf&ouml;r Sk&aring;ne?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Absolut. Vi arbetar med kunder i hela Sverige. M&ouml;ten sker digitalt eller p&aring; plats beroende p&aring; &ouml;nskem&aring;l.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Beh&ouml;ver jag en ny hemsida eller kan ni f&ouml;rb&auml;ttra min befintliga?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Det beror p&aring;. Vi g&ouml;r alltid en analys av nuvarande sajt f&ouml;rst. Ibland r&auml;cker det med optimering, ibland &auml;r en ny sajt det mest kostnadseffektiva.</p>
+                    </div>
+                </div>
+                <div class="liquid-glass p-6 md:p-8 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-white text-[15px] md:text-[16px] font-semibold pr-4">Vad inneb&auml;r era AI-utbildningar?</h4>
+                        <svg class="faq-chevron w-5 h-5 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[14px] text-slate-500 leading-relaxed pt-4">Vi erbjuder praktiska workshops d&auml;r ert team l&auml;r sig anv&auml;nda AI-verktyg f&ouml;r textproduktion, bildgenerering, dataanalys och arbetsfl&ouml;desautomation. Anpassat efter er bransch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 text-center bg-[#050505]">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-[28px] md:text-[40px] font-bold text-white mb-4 tracking-tight">Redo att v&auml;xa <span class="gradient-text">digitalt</span>?</h2>
+            <p class="text-[15px] text-slate-500 mb-10 max-w-lg mx-auto">Ber&auml;tta om ditt f&ouml;retag s&aring; &aring;terkommer vi med en kostnadsfri analys och f&ouml;rslag.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:info@breisnerconsulting.se?subject=Boka%20m%C3%B6te" class="cta-btn text-white px-10 py-4 rounded-full font-bold text-[13px] tracking-widest uppercase">Boka m&ouml;te</a>
+                <a href="#kontakt" class="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-full font-bold text-[13px] tracking-widest hover:bg-white/10 transition-all uppercase">Kontakta oss</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-20 md:py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+                <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-widest text-purple-400 mb-4">Kontakt</p>
+                    <h2 class="text-[28px] md:text-[36px] font-bold text-white mb-6 tracking-tight leading-[1.1]">H&ouml;r av dig</h2>
+                    <p class="text-[16px] text-slate-500 leading-relaxed mb-10">Fyll i formul&auml;ret eller kontakta oss direkt. Vi &aring;terkommer inom 24 timmar.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] text-slate-500 font-medium tracking-wide uppercase mb-0.5">E-post</div>
+                                <a href="mailto:info@breisnerconsulting.se" class="text-white text-[15px] hover:text-purple-400 transition-colors">info@breisnerconsulting.se</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] text-slate-500 font-medium tracking-wide uppercase mb-0.5">Plats</div>
+                                <span class="text-white text-[15px]">Trelleborg, Sk&aring;ne</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="liquid-glass p-8 md:p-10">
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <div class="space-y-5">
+                            <div>
+                                <label class="text-[11px] font-semibold uppercase tracking-widest text-slate-400 block mb-2">Namn</label>
+                                <input type="text" id="formName" required placeholder="Ditt namn" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-[15px] placeholder-slate-600 focus:outline-none focus:border-purple-500/40 transition-colors">
+                            </div>
+                            <div>
+                                <label class="text-[11px] font-semibold uppercase tracking-widest text-slate-400 block mb-2">E-post</label>
+                                <input type="email" id="formEmail" required placeholder="din@email.se" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-[15px] placeholder-slate-600 focus:outline-none focus:border-purple-500/40 transition-colors">
+                            </div>
+                            <div>
+                                <label class="text-[11px] font-semibold uppercase tracking-widest text-slate-400 block mb-2">Meddelande</label>
+                                <textarea id="formMessage" required rows="4" placeholder="Ber&auml;tta kort om ditt f&ouml;retag och vad du beh&ouml;ver hj&auml;lp med..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-[15px] placeholder-slate-600 focus:outline-none focus:border-purple-500/40 transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full cta-btn text-white py-4 rounded-xl font-bold text-[13px] tracking-widest uppercase">Skicka</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 md:py-20 px-6 border-t border-white/5">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center md:text-left">
+            <div>
+                <img src="assets/logo-white.png" alt="Breisner Consulting" class="h-10 mx-auto md:mx-0 mb-6 opacity-40">
+                <p class="text-[13px] text-slate-600 leading-relaxed">AI-utveckling, webdesign och digital marknadsf&ouml;ring i Sk&aring;ne.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-widest text-[11px] mb-6">Kontakt</h4>
+                <ul class="space-y-3 text-[13px] text-slate-400">
+                    <li><a href="mailto:info@breisnerconsulting.se" class="hover:text-purple-400 transition-colors">info@breisnerconsulting.se</a></li>
+                    <li>Trelleborg / Sk&aring;ne</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-widest text-[11px] mb-6">L&auml;nkar</h4>
+                <ul class="space-y-3 text-[13px] text-slate-400">
+                    <li><a href="#hem" class="hover:text-purple-400 transition-colors">Hem</a></li>
+                    <li><a href="#tjanster" class="hover:text-purple-400 transition-colors">Tj&auml;nster</a></li>
+                    <li><a href="#om" class="hover:text-purple-400 transition-colors">Om oss</a></li>
+                    <li><a href="#kontakt" class="hover:text-purple-400 transition-colors">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-[10px] font-medium uppercase tracking-[0.3em] text-slate-700 text-center">&copy; 2026 Breisner Consulting &mdash; Trelleborg, Sk&aring;ne</div>
+    </footer>
+
+    <!-- Sticky Mobile Footer -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 z-[60] bg-black/80 backdrop-blur-lg border-t border-white/10">
+        <a href="mailto:info@breisnerconsulting.se?subject=Boka%20m%C3%B6te" class="block w-full cta-btn text-white py-4 rounded-xl text-center font-bold text-[13px] tracking-widest uppercase">Boka m&ouml;te</a>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('menu').classList.toggle('active'); }
+
+        function toggleFaq(el) {
+            const answer = el.querySelector('.faq-answer');
+            const chevron = el.querySelector('.faq-chevron');
+            answer.classList.toggle('open');
+            chevron.classList.toggle('open');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const message = document.getElementById('formMessage').value;
+            const subject = encodeURIComponent('Kontaktformulär: ' + name);
+            const body = encodeURIComponent('Namn: ' + name + '\nE-post: ' + email + '\n\nMeddelande:\n' + message);
+            window.location.href = 'mailto:info@breisnerconsulting.se?subject=' + subject + '&body=' + body;
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
